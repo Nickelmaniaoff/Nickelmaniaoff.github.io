@@ -42,26 +42,10 @@
 </style>
 </head>
 
-<body>
-<div id="mainContent">
-	<form method="post" action="" name="form1" onsubmit="formdata(document.form1.code);return false;">
-	<br>Password:<input type="text" name="code" placeholder="code"/><br>
-	<br><input type="submit" name="commit" value="send"/><br>
-	</form>
-</div>
-<script> 
-function formdata(){
-	debugger
-	var psw = document.form1.code.value;
-	if (psw == "JEPPSON"){
-		var page = window.location.href;
-		var jeppson = "jeppson.html";
-		var newpage = page + jeppson;
-		window.location.href = newpage;
-		console.log(window.location);
-	}
-}
-</script>
+<form>
+	<br>sdadjfhsadhjsdj;lkadgjlj;sdlkgjsl;<input type="text" id="psw"/><br>
+	<br><input type="submit" value="submit" onclick="formdata()"/><br>
+</form>
 
 </body>
-</html>
+</html>	
