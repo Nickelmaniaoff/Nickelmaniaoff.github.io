@@ -44,13 +44,17 @@
 
 <body>
 <div id="mainContent">
-	<input type="text" id="psw" />
-  	<button onclick="submit();" href="javascript:;">Submit<button/>
+	<form>
+	<br>Password:<input type="text" id="psw"/><br>
+	<br><input type="submit" value="submit" onclick="formdata()"/><br>
+	</form>
 </div>
 <script> 
-
-function submit() {
-	
+function formdata(){
+	var psw = document.getElementById("psw").value;
+	if (psw == "JEPPSON"){
+		window.location.pathname = '/jeppson';
+	}
 }
 </script>
 
