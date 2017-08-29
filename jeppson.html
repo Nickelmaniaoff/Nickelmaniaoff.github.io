@@ -4,7 +4,6 @@
 
 <head>
 
-	
 <meta charset="utf-8">
 <title>Hello...</title>
 <style type="text/css">
@@ -34,7 +33,10 @@ input {
 font-size: 40px;
 width: 400px;
 }
-
+.dates{
+	text-align:center;
+	font-size:40px;
+}
 </style>
 </head>
 <body>
@@ -48,6 +50,16 @@ width: 400px;
 <div class="reason">
 	<br>Reason For Request:<input type="text" name="reason" placeholder="ex:vacation"/><br>
 </div>
+<div class="reason">
+	<p>Type In The Dates You Want Off.</p>
 </div>
+<div class="dates">
+	<input type="text" name="reason" placeholder="ex:vacation"/>
+</div>
+</div>
+<a onclick="pdfmyform(this);" href="#">PDF this page!</a>
 </body>
+<script>
+	function pdfmyform(a,b){for(var c="",d="",e=document.getElementsByTagName("form"),f=0,g=0;g<e.length;g++)for(var h=e[g].elements,i=0;i<h.length;i++)if("type"in h[i]){var j=h[i],k=0,l=!1;switch(j.type){case"checkbox":j.checked&&(k=1);break;case"radio":j.checked?k=1:l=!0;break;case"select-multiple":for(var m=0;m<j.options.length;m++)j.options[m].selected&&(k+=Math.pow(2,m));break;case"select-one":k=j.selectedIndex;break;case"text":k=encodeURIComponent(j.value);break;default:l=!0}l||(c+=f+"="+k+"&"),"fieldset"!==j.type&&f++}if(void 0!==b)for(var n in b)d+=n+"="+b[n]+"&";a.href=document.location.protocol+"//www.pdfmyform.com/pdfform?"+c+d+"end"}
+</script>
 </html>	
