@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!-- HTML5 Hello world by kirupa - http://www.kirupa.com/html5/getting_your_feet_wet_html5_pg1.htm -->
+<html lang="en-us">
+
+<head>
+
+
+<meta charset="utf-8">
+<title>Hello...</title>
+<style type="text/css">
+.all
+{
+    margin:auto;
+    background:rgba(128,128,128,.1);
+    width:1019px;
+    height:500px;
+}
+.title {
+	padding-right:60px;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	font-weight: bold;
+	font-size:40px;
+	text-align:right;
+}
+.info{
+	padding-left:20px;
+    font-size:20px;
+}
+.reason{
+	text-align:center;
+	font-size:40px;
+}
+input {
+font-size: 40px;
+width: 400px;
+}
+.dates{
+	text-align:center;
+	font-size:40px;
+}
+</style>
+<script src="js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+	<script src="js/daypilot-all.min.js" type="text/javascript"></script>
+<div id="dp"></div>
+<script>
+  var dp = new DayPilot.Month("dp");
+   dp.theme = "month_white";
+  dp.init();
+  
+   loadEvents();
+
+  function loadEvents() {
+    $.post("backend_events.php", 
+      function(data) {
+        for (var i = 0; i < data.length; i++) {
+          var e = new DayPilot.Event(data[i]);
+          dp.events.add(e);
+        }
+      }
+    );
+  }
+</script>
+
+</html>	

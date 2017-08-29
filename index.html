@@ -51,14 +51,18 @@
 </div>
 <script> 
 function formdata(){
-	debugger
 	var psw = document.form1.code.value;
-	if (psw == "JEPPSON"){
+	if (psw == "tj98572tr0"){
 		var page = window.location.href;
 		var jeppson = "jeppson.html";
 		var newpage = page + jeppson;
 		window.location.href = newpage;
-		console.log(window.location);
+	}
+	else if (psw == "mikey"){
+		var page = window.location.href;
+		var jeppson = "gomez.html";
+		var newpage = page + jeppson;
+		window.location.href = newpage;
 	}
 }
 </script>
